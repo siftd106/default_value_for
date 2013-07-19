@@ -134,11 +134,13 @@ module DefaultValueFor
         end
       end
 
-      if ActiveRecord::VERSION::MAJOR > 3 || (ActiveRecord::VERSION::MAJOR == 3 && ActiveRecord::VERSION::MINOR > 0)
-        super(attributes, options)
-      else
-        super(attributes)
-      end
+      super(attributes)
+
+      # if ActiveRecord::VERSION::MAJOR > 3 || (ActiveRecord::VERSION::MAJOR == 3 && ActiveRecord::VERSION::MINOR > 0)
+      #   super(attributes, options)
+      # else
+      #   super(attributes)
+      # end
     end
 
     def set_default_values
